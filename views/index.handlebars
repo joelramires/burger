@@ -1,0 +1,85 @@
+<div class="jumbotron jumbotron-fluid bg-dark text-light p-5">
+  <h1>Burgers App!</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    {{!-- column for form --}}
+    <div class="col-12 col-md-3">
+      <form id="burger-form">
+        <input class="form-control" id="name-input" placeholder="Burger's Name"/>
+        <button class="btn btn-success btn-block" type="submit">
+          Add A Burger!
+        </button>
+      </form>
+    </div>
+    {{!-- end left column --}}
+    {{!-- right column to display burger--}}
+    <div class="col-12 col-md-9">
+      {{!-- make two columns in right column --}}
+      <div class="row">
+        {{!-- inner left column --}}
+        <div class="col-12 col-md-6">
+          <h2>Burgers To Be Devoured</h2>
+          <ul class="list-group">
+            {{!-- use handlebars to print burger that aren't sleepy --}}
+            {{#each burgerData}}
+              {{!-- this is the same as saying !== --}}
+              {{#unless eaten}}
+                <li class="list-group-item d-flex">
+                  {{name}} 
+                  <span class="ml-auto">
+                    <button 
+                      data-id="{{id}}"
+                      data-eaten=""="true"
+                      class="btn btn-sm btn-info update-burger"
+                      >
+                     Devour Burger
+                    </button>
+
+                    {{!-- delete burger --}}
+                    <button
+                      data-id="{{id}}"
+                      class="btn btn-sm btn-danger delete-burger"
+                    >
+                       Delete Burger
+                    </button>
+                  </span>
+                </li>
+              {{/unless}}
+            {{/each}}
+          </ul>
+        </div>
+        {{!-- end inner left --}}
+        {{!-- inner right --}}
+        <div class="col-12 col-md-6">
+          <h2>Burger That Have Been Devoured</h2>
+          <ul class="list-group">
+            {{!-- use handlebars to print burgers that have not been eaten --}}
+            {{#each burgerData}}
+            {{!-- this is the same as saying !== --}}
+            {{#if eaten}}
+            <li class="list-group-item d-flex">
+              {{name}}
+              <span class="ml-auto">
+                <button data-id="{{id}}" data-sleepy="false" class="btn btn-sm btn-info update-burger">
+                  Make Another One
+                </button>
+        
+                {{!-- delete burger --}}
+                <button data-id="{{id}}" class="btn btn-sm btn-danger delete-burger">
+                   Throw Out Burger
+                </button>
+              </span>
+            </li>
+            {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+        {{!-- end inner right --}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="./assets/js/cats.js"></script>

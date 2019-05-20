@@ -22,12 +22,12 @@
         <div class="col-12 col-md-6">
           <h2>Burgers To Be Devoured</h2>
           <ul class="list-group">
-            {{!-- use handlebars to print burger that aren't sleepy --}}
+            {{!-- use handlebars to print burger that not eaten --}}
             {{#each burgerData}}
-              {{!-- this is the same as saying !== --}}
-              {{#unless eaten}}
+              
+              {{#unless burgers_eaten}}
                 <li class="list-group-item d-flex">
-                  {{name}} 
+                  {{burger_name}} 
                   <span class="ml-auto">
                     <button 
                       data-id="{{id}}"
@@ -58,11 +58,11 @@
             {{!-- use handlebars to print burgers that have not been eaten --}}
             {{#each burgerData}}
             {{!-- this is the same as saying !== --}}
-            {{#if eaten}}
+            {{#if burgers_eaten}}
             <li class="list-group-item d-flex">
-              {{name}}
+              {{burger_name}}
               <span class="ml-auto">
-                <button data-id="{{id}}" data-sleepy="false" class="btn btn-sm btn-info update-burger">
+                <button data-id="{{id}}" data-eaten=""="false" class="btn btn-sm btn-info update-burger">
                   Make Another One
                 </button>
         
@@ -82,4 +82,4 @@
   </div>
 </div>
 
-<script src="./assets/js/cats.js"></script>
+<script src="./assets/js/burgers.js"></script>

@@ -40,12 +40,12 @@ $(document).ready(function() {
     .catch(err => console.log(err));
   });
 
-  $(".delete-cat").on("click", function() {
-    // get cat's id
+  $(".delete-burger").on("click", function() {
+    // get burger's id
     const burgerId = $(this).attr("data-id");
 
     $.ajax({
-      url: `/api/bugers/${bugerId}`,
+      url: `/api/bugers/${burgerId}`,
       method: "DELETE"
     })
     .then(() => location.reload())

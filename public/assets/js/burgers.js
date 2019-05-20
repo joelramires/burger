@@ -36,7 +36,10 @@ $(document).ready(function() {
         eaten: eaten
       } // req.body
     })
-    .then(() => location.reload())
+    .then((data) => {
+      console.log(data);
+      location.reload()
+    })
     .catch(err => console.log(err));
   });
 
@@ -45,7 +48,7 @@ $(document).ready(function() {
     const burgerId = $(this).attr("data-id");
 
     $.ajax({
-      url: `/api/bugers/${burgerId}`,
+      url: `/api/burgers/${burgerId}`,
       method: "DELETE"
     })
     .then(() => location.reload())

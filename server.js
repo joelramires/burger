@@ -5,6 +5,8 @@ const exphbs = require('express-handlebars');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const apiRoutes = require("./routes/apiRoutes");
+
 // set up necessarily middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -18,7 +20,8 @@ app.set('view engine', 'handlebars');
 
 // turn on routes
 require('./routes/htmlRoutes')(app);
-require('./routes/apiRoutes')(app);
+// require('./routes/apiRoutes')(app);
+app.use(apiRoutes);
 
 // set up wildcard (404) route
 app.get('*', function(req, res) {

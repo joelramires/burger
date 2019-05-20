@@ -1,4 +1,4 @@
-// import our cats model
+// import our burgers model
 const burgers = require("../models/burgers");
 
 // export our route definitions as a function

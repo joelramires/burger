@@ -74,10 +74,10 @@ const update = (eatenValue, burgerId) => {
 
 // DELETE a burger
 // DELETE FROM burger WHERE id = ?
-const remove = (burgerId) => {dbBurgerData
+const remove = (burgerId) => {
   return new Promise((resolve, reject) => {
 
-    connection.query("DELETE FROM burgers WHERE id = ?", [burgerId], function (err, ) {
+    connection.query("DELETE FROM burgers WHERE id = ?", [burgerId], function (err, dbBurgerData) {
 
       if (err) {
         return reject(err);

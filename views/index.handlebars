@@ -1,5 +1,5 @@
-<div class="jumbotron jumbotron-fluid bg-dark text-light p-5">
-  <h1>Burgers App!</h1>
+<div class="jumbotron jumbotron-fluid bg-dark text-light p-5 text-center">
+  <h1>Burgers App</h1>
 </div>
 
 <div class="container">
@@ -8,7 +8,7 @@
     <div class="col-12 col-md-3">
       <form id="burger-form">
         <input class="form-control" id="name-input" placeholder="Burger's Name"/>
-        <button class="btn btn-success btn-block" type="submit">
+        <button class="btn btn-info btn-block" type="submit">
           Add A Burger!
         </button>
       </form>
@@ -32,7 +32,7 @@
                     <button 
                       data-id="{{id}}"
                       data-eaten="true"
-                      class="btn btn-sm btn-info update-burger"
+                      class="btn btn-sm btn-light update-burger"
                       >
                      Devour Burger
                     </button>
@@ -40,7 +40,7 @@
                     {{!-- delete burger --}}
                     <button
                       data-id="{{id}}"
-                      class="btn btn-sm btn-danger delete-burger"
+                      class="btn btn-sm btn-dark delete-burger"
                     >
                        Delete Burger
                     </button>
@@ -62,12 +62,12 @@
             <li class="list-group-item d-flex">
               {{burger_name}}
               <span class="ml-auto">
-                <button data-id="{{id}}" data-eaten=""="false" class="btn btn-sm btn-info update-burger">
+                <button data-id="{{id}}" data-eaten=""="false" class="btn btn-sm btn-light update-burger">
                   Make Another One
                 </button>
         
                 {{!-- delete burger --}}
-                <button data-id="{{id}}" class="btn btn-sm btn-danger delete-burger">
+                <button data-id="{{id}}" class="btn btn-sm btn-dark delete-burger">
                    Throw Out Burger
                 </button>
               </span>

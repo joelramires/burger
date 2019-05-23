@@ -1,4 +1,4 @@
-# burger
+# Burger APP
 
 ## Technologies Used
 - HTML
